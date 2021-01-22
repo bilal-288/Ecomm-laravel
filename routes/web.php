@@ -1,4 +1,7 @@
 <?php
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
+//ProductController
 
 /*
 |--------------------------------------------------------------------------
@@ -11,7 +14,10 @@
 |
 */
 
-Route::get('/login', function () 
+Route::get('/index', function () 
 {
     return view('login');
 });
+
+Route::POST('/login', 'UserController@login')->name('login.user');
+Route::get('/home_page', 'ProductController@index');
